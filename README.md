@@ -8,7 +8,7 @@ Go to [rapid.aaf.edu.au](https://rapid.aaf.edu.au/) or
 [rapid.test.aaf.edu.au](https://rapid.test.aaf.edu.au/) to register
 your service's callback URL. This Django site provides a URL of the
 form ```http://example.com:8000/rc```. When you register you will
-receive a custom AAF authorisation URL, take note of this. Also keep
+receive a custom AAF authorisation URL. Also keep
 the secret that you generate.
 
 Note: if you use the test federation then you do not need to set up SSL.
@@ -56,7 +56,7 @@ Build the Docker image:
     sudo docker build -t='user/django-aaf-rc' .
 
 The passwords for the django superuser and admin user are randomly
-generated, so take note of them during in the build output:
+generated, so take note of them in the build output:
 
      ---> Running in 1d21a78b631e
     Superuser created successfully.
@@ -76,15 +76,19 @@ To poke around in the container, run a shell:
     sudo docker run -i -t --rm -p 0.0.0.0:8000:8000 user/django-aaf-rc /bin/bash
 
 but beware that changes are lost by default when the container exits,
-as usual with a Docker container workflow.
+as usual with Docker container workflow.
 
-Open http://example.com:8000/rc/
+## Use it
+
+Open http://example.com:8000/rc/ in your browser.
 
 1. Click the big orange button.
 2. Choose your institution on the AAF site.
 3. Log in using your institution's single sign-on service.
 4. Finally, you will be redirected to the protected URL ```/rc/welcome``` which displays the attributes
-received from the AAF service:
+received from the AAF service
+
+Sample attributes:
 
     Success! You have been authenticated via AAF's Rapid Connect service!
 
