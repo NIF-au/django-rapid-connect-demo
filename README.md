@@ -1,7 +1,7 @@
-django-rapid-connect-demo
+# Django AAF Rapid Connect demo
 =========================
 
-Demo of AAF Rapid Connect authentication using Django.
+Demo of [AAF Rapid Connect](https://rapid.aaf.edu.au/) authentication using Django.
 
 ## Register your service
 
@@ -14,12 +14,16 @@ the secret that you generate.
 
 Note: if you use the test federation then you do not need to set up SSL.
 
+## Install Docker
+
 Install Docker on your Debian host:
 
     echo deb http://get.docker.io/ubuntu docker main | sudo tee /etc/apt/sources.list.d/docker.list
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
     sudo apt-get update
     sudo apt-get install -y lxc-docker
+
+## Configure the Django site
 
 Clone the repository:
 
@@ -62,7 +66,7 @@ generated, so take note of them during in the build output:
     Django superuser password: XXXXXXXXXXXXXXXXXXXX
     Django admin password: YYYYYYYYYYYYYYYYYYYY
 
-Run it:
+## Run it
 
     sudo docker run -i -t --rm -p 0.0.0.0:8000:8000 user/django-aaf-rc
 
