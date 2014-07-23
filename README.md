@@ -1,5 +1,4 @@
 # Django AAF Rapid Connect demo
-=========================
 
 Demo of [AAF Rapid Connect](https://rapid.aaf.edu.au/) authentication using Django.
 
